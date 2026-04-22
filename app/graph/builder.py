@@ -19,7 +19,7 @@ def build_graph():
 
 
 
-def build_agent_graph(model, tools, system=""):
+def build_agent_graph(model, tools, system="",checkpointer=None):
     graph = StateGraph(AgentState)
 
     tool_map = {t.name: t for t in tools}
@@ -37,4 +37,4 @@ def build_agent_graph(model, tools, system=""):
     graph.add_edge("action", "llm")
     graph.set_entry_point("llm")
 
-    return graph.compile()
+    return graph.compile(checkpointer=checkpointer)

@@ -1,1 +1,11 @@
 .env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database files (optional - if you want to ignore checkpoints.sqlite)
+*.sqlite
+*.sqlite3
